@@ -39,6 +39,10 @@ $("#submitBtn").on("click", function(){
         // employeeStartDate: employeeStartDate
         employeeMonthlyRateData: employeeMonthlyRate
     });
+  database.ref().on("child_added", function(){
+    console.log("hello")
+  })
+
 });
 
 
