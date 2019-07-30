@@ -18,6 +18,19 @@ var firebaseConfig = {
   var employeeMonthsWorked;
   var employeeMonthlyRate;
 
+$("#submitBtn").on("click", function(){
+    employeeName = $("#employeeNameInput").val().tirm();
+    employeeRole = $("#roleInput").val().trim();
+    employeeStartDate = $("#startDataInput").val().trim();
+    employeeMonthlyRate = $("#monthlyRateInput").val().trim();
+
+    console.log(employeeName);
+    console.log(employeeRole);
+    console.log(employeeStartDate);
+    console.log(employeeMonthlyRate);
+
+})
+
 
   
 
