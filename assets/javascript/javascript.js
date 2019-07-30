@@ -1,3 +1,5 @@
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyCLWhcoNK7YeHVAqD53tsqCb8NU0iE8E7U",
     authDomain: "time-sheet-255ce.firebaseapp.com",
@@ -12,24 +14,34 @@ var firebaseConfig = {
 
   var database = firebase.database();
 
-  var employeeName;
-  var employeeRole;
-  var employeeStartDate;
-  var employeeMonthsWorked;
-  var employeeMonthlyRate;
+  var employeeName = "";
+  var employeeRole = "";
+//   var employeeStartDate = "";
+//   var employeeMonthsWorked = "";
+  var employeeMonthlyRate = "";
 
 $("#submitBtn").on("click", function(){
-    employeeName = $("#employeeNameInput").val().tirm();
-    employeeRole = $("#roleInput").val().trim();
-    employeeStartDate = $("#startDataInput").val().trim();
-    employeeMonthlyRate = $("#monthlyRateInput").val().trim();
+    event.preventDefault();
+   
+    employeeName = $("#employeeNameInput").val()
+    employeeRole = $("#roleInput").val()
+    // employeeStartDate = $("#startDataInput").val()
+    employeeMonthlyRate = $("#monthlyRateInput").val()
 
     console.log(employeeName);
     console.log(employeeRole);
-    console.log(employeeStartDate);
+    // console.log(employeeStartDate);
     console.log(employeeMonthlyRate);
 
-})
+    database.ref().push({
+        employeeNameData: employeeName,
+        employeeRoleData: employeeRole,
+        // employeeStartDate: employeeStartDate
+        employeeMonthlyRateData: employeeMonthlyRate
+    });
+});
+
+
 
 
   
